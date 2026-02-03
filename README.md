@@ -1,6 +1,3 @@
-# Notes
-A comprehensive overview of all my learnings 📕
-
 ## Objective
 This repository is a structured collection of my learnings across different programming languages, tools, and technologies. It acts as a personal knowledge base and quick reference for concepts, patterns, experiments, and implementation notes.
 
