@@ -1,6 +1,5 @@
 ## Use Cookies
-yt-dlp --cookies cookies.txt "URL"
-> can download videos which have extensions like m3u8, mp4
+`yt-dlp --cookies cookies.txt "URL"` &rarr; can download videos which have extensions like m3u8, mp4
 
 ## Basic Commands
 `yt-dlp "URL"` &rarr; normal command
@@ -10,6 +9,9 @@ yt-dlp --cookies cookies.txt "URL"
 `yt-dlp -a list.txt` &rarr; download all from a TXT file
 
 `yt-dlp  -f bv "URL"` &rarr; only video (bv = best-video)
+
+`yt-dlp -f bv --recode-video webp "URL"` &rarr; convert to different format
+
 
 ```bash
 # Audio only in mp3
