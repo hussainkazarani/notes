@@ -244,8 +244,8 @@ int b = &b
 ```
 
 <p align="center">
-    <img src="../../assets/address-reference-example.png" alt="Address-of Operator" width="50%">
-    <img src="../../assets/pointer-explanation.jpg" alt="Pointer Syntax" width="50%">
+    <img src="../../assets/address-reference-example-new.png" alt="Address-of Operator" width="50%">
+    <img src="../../assets/pointer-explanation-new.png" alt="Pointer Syntax" width="50%">
 <p>
 
 ```cpp

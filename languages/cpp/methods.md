@@ -85,6 +85,5 @@ v.insert(pos, count, val)
 v.insert(pos, first it, second it)
 ```
 <p align="center">
-    <img src="../../assets/erase-remove-idiom.png" alt="Erase Syntax" width="50%">
-    <img src="../../assets/remove-method.png" alt="Remove Method" width="50%">
+    <img src="../../assets/remove-erase.png" alt="Remove-Erase">
 <p>
