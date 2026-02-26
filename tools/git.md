@@ -85,6 +85,12 @@ git diff main..branch2
 
 `git reflog` &rarr; check all local operations done
 
+```
+# PR Merge Conflicts
+A pull request is tied to a branch, not a specific commit, so whenever you push new commits to that branch, the PR automatically updates and Bitbucket always evaluates the latest branch tip. When merging, Git uses a three-way merge that compares (1) the common ancestor commit, (2) current main, and (3) your branch, and if the same lines changed differently on both sides, you get a conflict.
+
+Bitbucket told you to merge main into branch3 first because the PR source branch must be conflict-free against the destination before the platform allows the merge button, so you update the feature branch with main’s latest changes, resolve conflicts there, push, and then the PR can merge cleanly into main.
+```
 ## Git Reset
 `git reset <optional sha>` &rarr; only unstages the staged files. no commits undone. if `sha` is given, the files stay but not staged
 
@@ -127,6 +133,50 @@ git diff main..branch2
 \- Merge combines all commits in a branch into a single commit and adds that \***single**\* commit to the top of current branch
 
 \- Rebase puts all the commits in a branch at the top of current branch sequentially. \***No commits are lost**\*
+
+```js
+git pull --no-rebase origin main // fetches main, merges, creates a merge commit
+
+// to update a branch to latest main's commit
+// way 1
+git pull origin main
+
+// way 2
+git fetch // only gets the changes
+git merge origin/main
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>PR Merge Type</th>
+      <th>Your Commits Kept?</th>
+      <th>Merge Commit Added?</th>
+      <th>History Shape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Merge (default)</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Branched with merge node</td>
+    </tr>
+    <tr>
+      <td>Squash & Merge</td>
+      <td>No (combined into one)</td>
+      <td>Yes (single squashed commit)</td>
+      <td>Flat</td>
+    </tr>
+    <tr>
+      <td>Rebase & Merge</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Linear</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Fake Commits
 ```js
