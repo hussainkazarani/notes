@@ -92,6 +92,7 @@ Solution Folder
 ## Create Project
 ```c#
 dotnet new console -n HelloApp
+dotnet new console --use-program-main -n HelloApp
 dotnet build
 dotnet run
 
@@ -345,6 +346,14 @@ List<string> list2 = arr.ToList();
     }
     ```
 
+4. <u><b>HashSet\<T></b></u> &rarr; unique items only, no index access
+
+5. <u><b>Queue\<T></b></u> (FIFO) &rarr; `q.Enqueue()`, BFS, buffers
+
+6. <u><b>Stack\<T></b></u> (LIFO) &rarr; `s.Push()`, DFS
+
+7. <u><b>IEnumerable\<T></b></u> &rarr; a type which can be looped over
+
 ## TryVars
 ```c#
 // bad input
@@ -374,7 +383,7 @@ int x = int.MaxValue
 x = x + 1; // wraps around by default
 // an explicit check that allows it to wrap to lowest value
 checked {
-    int x =int.MaxValue
+    int x = int.MaxValue
     x++;
 }
 ```
